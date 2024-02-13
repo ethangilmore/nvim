@@ -1,3 +1,7 @@
+-- Keymaps
+vim.g.mapleader = " "
+vim.keymap.set("n", "<Leader>tt", function() vim.cmd('NvimTreeToggle') end)
+
 -- Basic things
 vim.o.number = true
 vim.o.tabstop = 4

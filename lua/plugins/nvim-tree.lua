@@ -7,6 +7,5 @@ return {
     },
     config = function()
         require("nvim-tree").setup({})
-        vim.cmd("NvimTreeOpen")
     end,
 }
