@@ -8,15 +8,13 @@ return {
     },
     config = function()
         require("nvim-tree").setup({})
-        local toggle_tree = function()
+        vim.keymap.set('n', '<Leader>tt', function()
             if require'nvim-tree.view'.is_visible() then
-                require'nvim-tree.api'.tree.close()
-                require'bufferline.api'.set_offset(0)
+                vim.cmd('NvimTreeClose')
             else
-                require'bufferline.api'.set_offset(31, 'File Explorer')
-                require'nvim-tree.api'.tree.open()
+                vim.cmd('DiffviewClose')
+                vim.cmd('NvimTreeOpen')
             end
-        end
-        vim.keymap.set('n', '<Leader>tt', toggle_tree)
+        end);
     end,
 }
