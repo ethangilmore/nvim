@@ -7,5 +7,6 @@ return {
     },
     config = function()
         require("nvim-tree").setup({})
+        vim.keymap.set('n', '<Leader>tt', function() vim.cmd('NvimTreeToggle') end)
     end,
 }
