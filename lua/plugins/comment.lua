@@ -4,12 +4,12 @@ return {
     config = function()
         require('Comment').setup({
             toggler = {
-                line = '<Leader>c',
-                block = '<Leader>b',
+                line = '<Leader>/',
+                -- block = '<Leader>b',
             },
             opleader = {
-                line = '<Leader>c',
-                block = '<Leader>b',
+                line = '<Leader>/',
+                -- block = '<Leader>b',
             },
         })
     end,
