@@ -13,7 +13,7 @@ return {
                 vim.cmd('NvimTreeClose')
             else
                 vim.cmd('DiffviewClose')
-                vim.cmd('NvimTreeOpen')
+                vim.cmd('NvimTreeFindFile')
             end
         end);
     end,
