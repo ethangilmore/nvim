@@ -1,6 +1,13 @@
 -- Keymaps
 vim.g.mapleader = " "
 vim.keymap.set('n', '<Leader>sr', ':%s/')
+vim.keymap.set('n', '<Leader>bn', ':bnext<CR>')
+vim.keymap.set('n', '<Leader>bp', ':bprev<CR>')
+vim.keymap.set('n', '<Leader>bd', function()
+    local bufnr = vim.fn.bufnr()
+    vim.cmd(":bprev")
+    vim.cmd(":bdelete " .. bufnr)
+end)
 
 -- Basic things
 vim.o.number = true
