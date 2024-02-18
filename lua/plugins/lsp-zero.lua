@@ -20,16 +20,16 @@ return {
                 hint = '',
                 info = '',
             })
-            -- Only show diagnostics on hover
-            vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-                vim.lsp.diagnostic.on_publish_diagnostics, {
-                    virtual_text = false,
-                    signs = true,
-                    update_in_insert = false,
-                }
-            )
-            vim.o.updatetime = 250
-            vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope = "line"})')
+            -- -- Only show diagnostics on hover
+            -- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+            --     vim.lsp.diagnostic.on_publish_diagnostics, {
+            --         virtual_text = false,
+            --         signs = true,
+            --         update_in_insert = false,
+            --     }
+            -- )
+            -- vim.o.updatetime = 250
+            -- vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope = "line"})')
         end,
         dependencies = {
             'neovim/nvim-lspconfig',

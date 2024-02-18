@@ -8,16 +8,18 @@ return  {
                         filetype = "NvimTree",
                         text = "File Explorer",
                         highlight = "Directory",
-                        separator = true -- use a "true" to enable the default, or set your own character
+                        separator = "▕",
                     },
                     {
                         filetype = "DiffviewFiles",
                         text = "Diffview",
                         highlight = "Directory",
-                        separator = true -- use a "true" to enable the default, or set your own character
+                        separator = "▕",
                     },
                 }
             }
         })
+        vim.cmd("highlight BufferLineOffsetSeparator guibg=#1F1F28")
+        vim.cmd("set fillchars+=vert:▕")
     end,
 }
