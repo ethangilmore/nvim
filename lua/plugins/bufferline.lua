@@ -23,4 +23,7 @@ return  {
         vim.cmd("highlight BufferLineOffsetSeparator guifg=#16161D")
         vim.cmd("set fillchars+=vert:▕")
     end,
+    dependencies = {
+        "rebelot/kanagawa.nvim",
+    },
 }
