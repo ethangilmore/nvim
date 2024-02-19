@@ -11,7 +11,7 @@ return {
 
             cmp.setup({
                 completion = {
-                    autocomplete = false,
+                    completeopt = 'menu,menuone,noinsert'
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<C-Space>'] = cmp.mapping(function()
