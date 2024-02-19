@@ -1,5 +1,7 @@
 -- Keymaps
 vim.g.mapleader = " "
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '<Leader>sr', ':%s/')
 vim.keymap.set('n', '<Leader>bn', ':bnext<CR>')
 vim.keymap.set('n', '<Leader>bp', ':bprev<CR>')
