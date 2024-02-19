@@ -14,13 +14,13 @@ return {
                     completeopt = 'menu,menuone,noinsert'
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ['<C-Space>'] = cmp.mapping(function()
-                        if cmp.visible() then
-                            cmp.close()
-                        else
-                            cmp.complete()
-                        end
-                    end),
+                    -- ['<C-Space>'] = cmp.mapping(function()
+                    --     if cmp.visible() then
+                    --         cmp.close()
+                    --     else
+                    --         cmp.complete()
+                    --     end
+                    -- end),
                     ['<C-n>'] = cmp.mapping(function(fallback)
                         if vim.b.copilot_suggestion_hidden then
                             cmp.select_next_item()

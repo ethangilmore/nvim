@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '<Leader>sr', ':%s/')
+vim.keymap.set('n', '<Leader>w', '<C-w>')
 vim.keymap.set('n', '<Leader>bn', ':bnext<CR>')
 vim.keymap.set('n', '<Leader>bp', ':bprev<CR>')
 vim.keymap.set('n', '<Leader>bd', function()
@@ -18,6 +19,7 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.signcolumn = "yes:1"
+vim.o.cmdheight = 0
 
 -- lazy.nvim things
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

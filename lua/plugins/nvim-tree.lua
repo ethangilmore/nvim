@@ -16,5 +16,6 @@ return {
                 vim.cmd('NvimTreeFindFile')
             end
         end);
+        vim.keymap.set('n', '<Leader>tf', function() vim.cmd("NvimTreeFocus") end);
     end,
 }
