@@ -14,13 +14,6 @@ return {
                     completeopt = 'menu,menuone,noinsert'
                 },
                 mapping = cmp.mapping.preset.insert({
-                    -- ['<C-Space>'] = cmp.mapping(function()
-                    --     if cmp.visible() then
-                    --         cmp.close()
-                    --     else
-                    --         cmp.complete()
-                    --     end
-                    -- end),
                     ['<C-n>'] = cmp.mapping(function(fallback)
                         if vim.b.copilot_suggestion_hidden then
                             cmp.select_next_item()
@@ -39,25 +32,22 @@ return {
                             fallback()
                         end
                     end),
-                    ['<Tab>'] = cmp.mapping(function(fallback)
-                        if vim.b.copilot_suggestion_hidden then
+                    ['<CR>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
                             cmp.confirm()
-                        elseif require('copilot.suggestion').is_visible() then
-                            require('copilot.suggestion').accept()
                         else
                             fallback()
                         end
                     end),
+                    ['<Tab>'] = cmp.mapping(function(fallback)
+                        if vim.b.copilot_suggestion_hidden then
+                            fallback()
+                        else
+                            require('copilot.suggestion').accept()
+                        end
+                    end),
                 })
             })
-
-            cmp.event:on("menu_opened", function()
-                vim.b.copilot_suggestion_hidden = true
-            end)
-
-            cmp.event:on("menu_closed", function()
-              vim.b.copilot_suggestion_hidden = false
-            end)
         end,
     },
 }
