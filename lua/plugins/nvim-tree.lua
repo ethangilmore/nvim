@@ -6,7 +6,13 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     config = function()
-        require("nvim-tree").setup({})
+        require("nvim-tree").setup({
+            filters = {
+                custom  = {
+                    ".meta",
+                },
+            },
+        })
         vim.keymap.set('n', '<Leader>tt', function() vim.cmd('NvimTreeToggle') end);
         vim.keymap.set('n', '<Leader>tf', function() vim.cmd("NvimTreeFocus") end);
     end,
