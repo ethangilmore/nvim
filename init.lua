@@ -2,10 +2,11 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', '<Leader>;', '@:')
 vim.keymap.set({ 'n', 'i' }, '<C-s>', '<ESC>:w<CR>')
-vim.keymap.set('n', '<Leader>q', ':qa<CR>')
-vim.keymap.set('n', '<Leader>x', ':xa<CR>')
-vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<CR>')
-vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>')
+vim.keymap.set('n', 'q', ':q<CR>')
+vim.keymap.set('n', '<Leader>Q', ':qa<CR>')
+vim.keymap.set('n', '<Leader>X', ':xa<CR>')
+vim.keymap.set('n', 'gd', '<cmd>Trouble lsp_definitions<CR>')
+vim.keymap.set('n', 'gr', '<cmd>Trouble lsp_references<CR>')
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '<Leader>sr', ':%s/')
@@ -25,7 +26,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
-vim.o.signcolumn = "yes:1"
+vim.o.signcolumn = "auto:4"
 vim.o.cmdheight = 0
 
 -- lazy.nvim things

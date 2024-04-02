@@ -15,19 +15,19 @@ return {
                 lsp_zero.default_keymaps({buffer = bufnr})
             end)
             lsp_zero.set_sign_icons({
-                error = '',
-                warn = '',
-                hint = '',
-                info = '',
+                error = "",
+                warn= "",
+                hint = "",
+                info= "",
             })
-            -- -- Only show diagnostics on hover
-            -- vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-            --     vim.lsp.diagnostic.on_publish_diagnostics, {
-            --         virtual_text = false,
-            --         signs = true,
-            --         update_in_insert = false,
-            --     }
-            -- )
+            -- Only show diagnostics on hover
+            vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+                vim.lsp.diagnostic.on_publish_diagnostics, {
+                    virtual_text = false,
+                    signs = true,
+                    update_in_insert = false,
+                }
+            )
             -- vim.o.updatetime = 250
             -- vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(0, {scope = "line"})')
         end,
