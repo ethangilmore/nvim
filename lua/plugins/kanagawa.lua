@@ -4,8 +4,6 @@ return {
     lazy = false,
     config = function()
         require('kanagawa').setup({
-            -- undercurl = true,
-            -- transparent = true,
             colors= {
                 theme = {
                     all = {

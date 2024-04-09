@@ -35,7 +35,7 @@ return {
                             fallback()
                         end
                     end),
-                    ['<CR>'] = cmp.mapping(function(fallback)
+                    ['<Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.confirm({ select = true })
                         elseif require('copilot.suggestion').is_visible() then

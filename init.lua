@@ -1,16 +1,14 @@
 -- Keymaps
 vim.g.mapleader = " "
-vim.keymap.set('n', '<Leader>;', '@:')
-vim.keymap.set({ 'n', 'i' }, '<C-s>', '<ESC>:w<CR>')
-vim.keymap.set('n', 'q', ':q<CR>')
-vim.keymap.set('n', '<Leader>Q', ':qa<CR>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<ESC>:w<CR>')
 vim.keymap.set('n', '<Leader>X', ':xa<CR>')
+-- LSP
 vim.keymap.set('n', 'gd', '<cmd>Trouble lsp_definitions<CR>')
 vim.keymap.set('n', 'gr', '<cmd>Trouble lsp_references<CR>')
+-- Indentation
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
-vim.keymap.set('n', '<Leader>sr', ':%s/')
-vim.keymap.set('n', '<Leader>w', '<C-w>')
+-- Tabs/Buffers
 vim.keymap.set('n', '<Leader>n', ':bnext<CR>')
 vim.keymap.set('n', '<Leader>p', ':bprev<CR>')
 vim.keymap.set('n', '<Leader>l', ':b#<CR>')
