@@ -27,6 +27,16 @@ vim.o.shiftwidth = 4
 vim.o.signcolumn = "auto:4"
 vim.o.cmdheight = 0
 
+-- Filetypes
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.cmp",
+    command = "setfiletype javascript",
+})
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.cls",
+    command = "setfiletype java",
+})
+
 -- lazy.nvim things
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
