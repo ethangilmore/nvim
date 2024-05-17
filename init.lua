@@ -50,5 +50,8 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
-
+require("lazy").setup({
+    { import = "shared" },
+	{ import = "neovim", cond = (function() return not vim.g.vscode end) },
+	{ import = "vscode", cond = (function() return vim.g.vscode end) },
+})
