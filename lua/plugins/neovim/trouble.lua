@@ -5,7 +5,7 @@ return {
         mode = "document_diagnostics",
         padding = false,
         auto_close = true,
-        use_diagnostic_signs = true,
+        -- use_diagnostic_signs = true,
     },
     init = function()
         vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)

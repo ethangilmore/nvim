@@ -1,4 +1,3 @@
--- Keybinds
 require("keybinds.shared")
 if vim.g.vscode then
     require("keybinds.vscode")
@@ -22,5 +21,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { import = "plugins.shared" },
 	{ import = "plugins.neovim", cond = (function() return not vim.g.vscode end) },
-	-- { import = "plugins.vscode", cond = (function() return vim.g.vscode end) },
+	{ import = "plugins.vscode", cond = (function() return vim.g.vscode end) },
 })
