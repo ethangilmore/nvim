@@ -1,3 +1,6 @@
+vim.keymap.set('n', 'gd', '<cmd>Trouble lsp_definitions<CR>')
+vim.keymap.set('n', 'gr', '<cmd>Trouble lsp_references<CR>')
+
 return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },

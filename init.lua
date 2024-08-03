@@ -1,11 +1,6 @@
-require("keybinds.shared")
-if vim.g.vscode then
-    require("keybinds.vscode")
-else
-    require("keybinds.neovim")
-end
-
--- Plugins
+require("options")
+require("keybinds")
+require("filetypes")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -19,8 +14,4 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-    { import = "plugins.shared" },
-	{ import = "plugins.neovim", cond = (function() return not vim.g.vscode end) },
-	{ import = "plugins.vscode", cond = (function() return vim.g.vscode end) },
-})
+require("lazy").setup("plugins")
