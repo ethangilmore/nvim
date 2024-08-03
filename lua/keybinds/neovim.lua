@@ -13,6 +13,12 @@ vim.keymap.set('n', '<Leader>d', function()
     vim.cmd(":bprev")
     vim.cmd(":bdelete " .. bufnr)
 end)
+vim.keymap.set('n', '<Leader>o', function()
+    local current_buf = vim.api.nvim_get_current_buf()
+    print("Current buffer number: " .. current_buf)
+    assert(current_buf ~= nil and current_buf > 0, "Invalid buffer number")
+end)
+vim.keymap.set('n', '<Leader><CR>', '@:')
 
 -- Basic things
 vim.o.number = true
@@ -21,6 +27,8 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.cmdheight = 0
+vim.o.relativenumber = true
+vim.o.number = true
 
 -- Filetypes
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {

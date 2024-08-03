@@ -39,6 +39,8 @@ return {
                         if cmp.visible() then
                             cmp.confirm({ select = true })
                         elseif require('copilot.suggestion').is_visible() then
+                            local current_buf = vim.api.nvim_get_current_buf()
+                            print("Current buffer number: " .. current_buf)
                             require('copilot.suggestion').accept()
                         else
                             fallback()
