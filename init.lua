@@ -1,8 +1,7 @@
-require("options")
 require("keybinds")
+require("options")
 require("filetypes")
-
-vim.g.mapleader = ' '
+require("diagnostics")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

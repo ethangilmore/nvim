@@ -4,7 +4,7 @@ return {
     lazy = false,
     config = function()
         require('kanagawa').setup({
-            colors= {
+            colors = {
                 theme = {
                     all = {
                         ui = {

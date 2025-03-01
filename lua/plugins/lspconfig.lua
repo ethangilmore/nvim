@@ -6,8 +6,42 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
+        local symbols = {
+            Error = { icon = " ", priority = 50 },
+            Warn  = { icon = " ", priority = 40 },
+            Info  = { icon = " ", priority = 30 },
+            Hint  = { icon = " ", priority = 20 },
+        }
+        for severity, opts in pairs(symbols) do
+            local hl = "DiagnosticSign" .. severity
+            vim.fn.sign_define(hl, {
+                text = opts.icon,
+                texthl = hl,
+                numhl = hl,
+                priority = opts.priority,
+            })
+        end
+
         local servers = {
-            lua_ls = {},
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = 'LuaJIT',
+                            path = vim.split(package.path, ';'),
+                        },
+                        diagnostics = {
+                            globals = { 'vim' },
+                        },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        },
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
+            },
             pyright = {
                 settings = {
                     python = {
@@ -18,7 +52,13 @@ return {
             tsserver = {},
             omnisharp = {},
             texlab = {},
-            clangd = {},
+            clangd = {
+                settings = {
+                    clangd = {
+                        fallbackFlags = { "--style=file"}
+                    }
+                }
+            },
         }
 
         vim.api.nvim_create_autocmd('LspAttach', {
